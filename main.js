@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function() {
   var increase = 2;
   var postCount = 2;
@@ -16,3 +16,4 @@ $(document).ready(function() {
 
   });
 });
+*/

@@ -7,10 +7,6 @@ spl_autoload_register('Autoloader::ClassLoader');
 $app = App::getInstance();
 $db = $app->getConn();
 
-$app->renderHeader();
-//$app->renderPosts();
-
-echo "<div class='posts'></div>";
-echo "<button class='posts__button'>HEck</button>";
-
-$app->renderFooter();
+include_once('view/index.php');
+$index = new index($app);
+$index->render();

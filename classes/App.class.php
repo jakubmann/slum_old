@@ -60,9 +60,11 @@ class App {
 
 
     public function getPostById($inId) {
+      /*
         $stmt = $this->pdo->query("SELECT * FROM text WHERE id = " . $inId . " ORDER BY id DESC");
         $row = $stmt->fetch();
         return new Post($row['id'], $row['title'], $row['body'], $row['author'], $row['post_date']);
+        */
     }
 
 

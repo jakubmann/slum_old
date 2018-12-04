@@ -1,40 +1,53 @@
 <?php
 
-require_once("../Autoloader.php");
+require_once("Autoloader.php");
 spl_autoload_register('Autoloader::ClassLoader');
 
 
-class Post {
-    public $id;
-    public $title;
-    public $body;
-    public $author;
-    public $post_date;
-    public $post_time;
+class Post extends DbObject {
+  protected $mapping = [
+    'id',
+    'author',
+    'title',
+    'body',
+    'post_date'
+  ];
 
-    public function __construct($inId=null, $inTitle=null, $inBody=null, $inAuthor=null, $inPost_date=null) {
-        $app = App::getInstance();
-        $db = $app->getConn();
+  protected $timePosted;
+  protected $datePosted;
 
-        if (!empty($inId)) {
-            $this->id = $inId;
-        }
-        if (!empty($inTitle)) {
-            $this->title = $inTitle;
-        }
-        if (!empty($inBody)) {
-            $this->body = nl2br($inBody);
-        }
-
-        if (!empty($inPost_date)) {
-          $this->post_date = date('j. n. Y',strtotime($inPost_date));
-          $this->post_time = date('H:i',strtotime($inPost_date));
-        }
-
-        if (!empty($inAuthor)) {
-            $query = $db->query("SELECT firstname, lastname FROM users WHERE id = " . $inAuthor);
-            $row = $query->fetch();
-            $this->author = $row['firstname'] . " " . $row['lastname'];
-        }
+  public function getAuthorName() {
+    $sql = 'SELECT * FROM users WHERE id = :id';
+    $statement = App::getInstance()->getConn()->prepare($sql);
+    $statement->execute(array(
+      ':id' => $this->author
+    ));
+    $result = $statement->fetchAll();
+    foreach ($result as $row) {
+      return $row['firstname'] . ' ' . $row['lastname'];
     }
+  }
+
+  public function formatTime() {
+    return [
+      'date' => date('j. n. Y',strtotime($this->post_date)),
+      'time' => date('H:i',strtotime($this->post_date))
+    ];
+  }
+
+  private function makediv($class, $content) {
+    return '<div class=\'' . $class . '\'>' . $content . '</div>' . "\n";
+  }
+
+  public function render() {
+    $output = '';
+    $output .= $this->makediv('post',
+      $this->makediv('post__title', $this->title) .
+      $this->makediv('post__author', $this->getAuthorName()) .
+      $this->makediv('post__body', nl2br($this->body)) .
+      $this->makediv('post__date', $this->formatTime()['date']) .
+      $this->makediv('post__time', $this->formatTime()['time'])
+    );
+    return $output;
+  }
 }

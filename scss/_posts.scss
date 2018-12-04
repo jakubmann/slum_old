@@ -19,11 +19,20 @@
     }
     &__body {
       display: inline-block;
-    text-align: left;
-    font-family: $plex-serif;
-    font-weight: 400;
-    margin-bottom: 10px;
+      text-align: left;
+      font-family: $plex-serif;
+      font-weight: 400;
+      margin-bottom: 10px;
     }
+    &__date {
+      font-family: $plex-mono;
+      font-weight: bold;
+    }
+    &__time {
+      font-family: $plex-mono;
+      font-weight: lighter;
+    }
+
   }
   &--last {
     border-bottom: none;
