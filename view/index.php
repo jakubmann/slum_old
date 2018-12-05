@@ -13,7 +13,7 @@ class index {
   public function render() {
     $posts = new Posts($this->app);
     $tpl = file_get_contents('template/posts.php');
-    $tpl = str_replace('{\CONTENT}', $posts->render(2), $tpl);
+    $tpl = str_replace('{\CONTENT}', $posts->render(10), $tpl);
     include('template/template.php');
   }
 }

@@ -1,4 +1,4 @@
 <div class='posts'>
-  <h2 style="font-family: Consolas; font-size: 25px;">Posts</h2>
+  <h2 class='posts__title'>Most recent posts</h2>
   {\CONTENT}
 </div>

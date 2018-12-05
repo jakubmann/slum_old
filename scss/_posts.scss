@@ -1,4 +1,11 @@
 .posts {
+  margin-top: 25px;
+  &__title {
+    font-family: $plex-mono;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+  }
 
   .post {
     line-height: 1.5;

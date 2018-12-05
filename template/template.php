@@ -15,7 +15,7 @@
 
 
 <div class="header">
-    <h1 class="header__title">>Slum_</h1>
+    <h1 class="header__title">Slum</h1>
     <div class="login">
 
     </div>
