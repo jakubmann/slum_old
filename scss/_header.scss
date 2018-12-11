@@ -2,7 +2,8 @@
   width: 100%;
   text-align: center;
   background-color: black;
-  @media screen and (max-width: 760px) {
+  padding-bottom: 25px;
+  @media (max-width: $phone) {
     height: 100vh;
   }
   &__title {
@@ -12,12 +13,116 @@
     letter-spacing: 6px;
     color: white;
     padding: 50px;
-    @media screen and (max-width: 760px) {
+    @media (max-width: $phone) {
       padding: 0px;
       font-size: 30px;
       height: 100%;
       line-height: 80vh;
     }
   }
+}
 
+.login {
+	margin: 0 auto;
+  &-form {
+    @media (max-width: $phone) {
+      background-color: white;
+      padding-top: 4%;
+      padding-bottom: 4%;
+      border-bottom: $default_border;
+    }
+  }
+	&__text {
+		font-family: $plex-mono;
+		font-weight: 400;
+	}
+
+	&__input {
+		padding: 4px 5px 4px 5px;
+		border-radius: 5px;
+		border: $default_border;
+		font-family: $plex-mono;
+		margin-right: 10px;
+    @media (max-width: $phone) {
+      display: block;
+      width: 80%;
+      margin: 0px auto;
+      margin-bottom: 5px;
+    }
+		&__message {
+			font-family: $plex-mono;
+			font-weight: 400;
+		}
+	}
+
+  &__button {
+    &--login {
+      border: none;
+      padding: 8px 15px;
+      background-color: $gray;
+      font-family: $plex-mono;
+      border-radius: 5px;
+      &:hover {
+        background-color: $red;
+      }
+    }
+    &--register {
+      color: white;
+      font-family: $plex-mono;
+      margin-left: 12px;
+      @media (max-width: $phone) {
+        color: black;
+      }
+    }
+  }
+}
+
+.navigation {
+  background-color: white;
+    &__ul {
+      list-style-type: none;
+      padding: 10px;
+      text-align: center;
+      @media screen and (max-width: $phone) {
+        padding: 0px;
+        margin-top: 150px;
+      }
+    }
+    &__item {
+      width: 15%;
+      display: inline-block;
+      padding: 16px;
+      font-family: $plex-sans;
+      border-left: $default_border;
+      border-width: 2px;
+      @media screen and (max-width: $phone) {
+        width: 75%;
+        margin: 0px auto;
+        padding: 12px;
+        border-left: none;
+        position: relative;
+        z-index : 1;
+        &:before {
+          content: "";
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          border-top: 2px solid black;
+          position: absolute;
+          width: 10%;
+          left: 45%;
+        }
+      }
+      &--selected {
+        color: $light-gray;
+      }
+      &--first {
+        border: 0px;
+      }
+    }
+
+    &__link {
+      color: black;
+      text-decoration: none;
+    }
 }

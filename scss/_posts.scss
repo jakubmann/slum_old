@@ -1,10 +1,20 @@
 .posts {
   margin-top: 25px;
+  @media (max-width: $phone) {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 25px;
+  }
   &__title {
-    font-family: $plex-mono;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
+    margin-top: 40px;
+  	text-align: center;
+  	font-family: $plex-sans;
+  	font-weight: 600;
+  	font-size: 50px;
+  	letter-spacing: 6px;
+    @media (max-width: $phone) {
+      font-size: 30px;
+    }
   }
 
   .post {
@@ -16,6 +26,9 @@
       font-family: $plex-mono;
       font-weight: 200;
       font-size: 25px;
+      @media (max-width: $phone) {
+        font-size: 20px;
+      }
     }
     &__author {
       font-family: $plex-mono;
@@ -30,16 +43,24 @@
       font-family: $plex-serif;
       font-weight: 400;
       margin-bottom: 10px;
+      @media (max-width: $phone) {
+        font-size: 12px;
+      }
     }
     &__date {
       font-family: $plex-mono;
       font-weight: bold;
+      @media (max-width: $phone) {
+        font-size: 12px;
+      }
     }
     &__time {
       font-family: $plex-mono;
       font-weight: lighter;
+      @media (max-width: $phone) {
+        font-size: 12px;
+      }
     }
-
   }
   &--last {
     border-bottom: none;

@@ -1,9 +1,4 @@
 <?php
-
-require_once("Autoloader.php");
-spl_autoload_register('Autoloader::ClassLoader');
-
-
 class Post extends DbObject {
   protected $mapping = [
     'id',

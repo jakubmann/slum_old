@@ -1,6 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <title>Slum</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +7,19 @@
     <link rel="stylesheet" type="text/css" href = "css/main.css">
     <meta charset="UTF-8">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script type='text/javascript' src="js/main.js"></script>
+
+
 </head>
 <body>
-<script src="main.js"></script>
 
 
-<div class="header">
-    <h1 class="header__title">Slum</h1>
-    <div class="login">
 
-    </div>
-    <div class="navigation">
-
-    </div>
-</div>
+<?php
+  echo $header;
+?>
 
 <?php
   echo $tpl;

@@ -1,7 +1,4 @@
 <?php
-require_once("Autoloader.php");
-spl_autoload_register('Autoloader::ClassLoader');
-
 class Posts {
   protected $app;
   protected $pdo;
