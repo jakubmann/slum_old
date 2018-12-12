@@ -8,5 +8,7 @@
 		<button class="login__button--login" type="submit" name="submit">log in</button>
 
 		<a class="login__button--register" href="register.php">not registered?</a>
+		<div class='login__error'>
+    </div>
 	</form>
 </div>

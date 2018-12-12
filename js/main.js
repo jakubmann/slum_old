@@ -1,5 +1,6 @@
 $('document').ready(function() {
 
+  //registration
   function submitRegisterForm() {
     var data = $('#signup-form').serialize();
 
@@ -16,6 +17,7 @@ $('document').ready(function() {
         }
         else if (data=='registered') {
           $('#signup-form').html('<div class="alert--success">Registered successfully!</div>');
+          setTimeout('window.location.href = "index.php"; ', 4000);
         }
         else {
           $('#error').html('<div class="alert">' + data + '</div>')
@@ -68,6 +70,46 @@ $('document').ready(function() {
       }
     },
     submitHandler: submitRegisterForm
+  });
+
+
+  //login
+  function submitLoginForm() {
+    var data = $('#login-form').serialize();
+
+    $.ajax({
+      type: 'POST',
+      url: 'ajax/login.php',
+      data: data,
+      success: function(data) {
+        if (data == '1') {
+          $('.login__input').css('border-color', '#0ed615');
+          $('.login__input').css('background-color', '#c3f4c5');
+          $('.login__input').css('color', '#0ed615');
+          setTimeout('window.location.href = "index.php"; ', 2000);
+        }
+        else {
+          $('login__error').html(data);
+        }
+        console.log(data);
+      }
+    });
+  }
+
+  $('#login-form').validate({
+    rules: {
+      username: {
+        required: true,
+      },
+      password: {
+        required: true
+      }
+    },
+    messages: {
+      password: '',
+      username: ''
+    },
+    submitHandler: submitLoginForm
   });
 });
 

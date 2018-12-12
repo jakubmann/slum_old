@@ -20,11 +20,23 @@
       line-height: 80vh;
     }
   }
+  &__message {
+    font-family: $plex-sans;
+    color: white;
+    font-size: 15px;
+    padding-bottom: 12px;
+  }
 }
 
 .login {
 	margin: 0 auto;
   &-form {
+    .error {
+      font-family: $plex-mono;
+      font-size: 13px;
+      border-color: $red;
+      color: $red;
+    }
     @media (max-width: $phone) {
       background-color: white;
       padding-top: 4%;
@@ -32,6 +44,7 @@
       border-bottom: $default_border;
     }
   }
+
 	&__text {
 		font-family: $plex-mono;
 		font-weight: 400;
@@ -64,6 +77,16 @@
       border-radius: 5px;
       &:hover {
         background-color: $red;
+      }
+    }
+    &--logout {
+      border: none;
+      padding: 8px 15px;
+      background-color: $red;
+      font-family: $plex-mono;
+      border-radius: 5px;
+      &:hover {
+        background-color: $gray;
       }
     }
     &--register {

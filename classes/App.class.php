@@ -26,8 +26,6 @@ class App {
         }
     }
 
-
-
     private function __construct()
     {
       try {
