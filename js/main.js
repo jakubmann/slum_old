@@ -90,6 +90,9 @@ $('document').ready(function() {
         }
         else {
           $('login__error').html(data);
+          $('.login__input').css('border-color', 'red');
+          $('.login__input').css('color', 'red');
+          $('.login__error').html('<p>Incorrect username or password.</p>')
         }
         console.log(data);
       }

@@ -12,8 +12,8 @@ $db = $app->getConn();
 if ($_POST) {
   $input_username = trim($_POST['username']);
   $input_email = trim($_POST['username']);
-  $input_password = trim($_POST['password']);
 
+  $input_password = trim($_POST['password']);
   $input_password = md5($input_password);
 
   try {

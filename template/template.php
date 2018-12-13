@@ -17,16 +17,12 @@
 
 
 
-<?php
-  echo $header;
-?>
+{/HEADER}
 
-<?php
-  echo $tpl;
-?>
+{/TPL}
 
 <div class="footer">
-    <div class="footer__text">&copy;Jakub Mann 2018</div>
+    <div class="footer__text">&copy;Jakub Mann 2018-3018</div>
 </div>
 </body>
 </html>

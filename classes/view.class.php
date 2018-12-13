@@ -7,13 +7,11 @@ class View {
       $stmt = App::getInstance()->getConn()->prepare("SELECT username FROM users WHERE id = :id");
       $stmt->execute(array(":id"=>$_SESSION['user_id']));
       $row=$stmt->fetch(PDO::FETCH_ASSOC);
-      return str_replace('{/CONTENT}', 'Welcome back, ' . $row['username'] . '.', file_get_contents('template/header/loggedIn.php')) .
-      file_get_contents('template/header/navigation_loggedIn.php');
+      $message = 'Welcome back, ' . $row['username'] . '.';
+      return str_replace('{/CONTENT}', $message, file_get_contents('template/header/loggedIn.php'));
     }
     else {
-      return file_get_contents('template/header/loggedOut.php') .
-
-      file_get_contents('template/header/navigation_loggedOut.php');
+      return file_get_contents('template/header/loggedOut.php');
     }
 
   }
