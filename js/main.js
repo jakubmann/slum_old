@@ -114,26 +114,15 @@ $('document').ready(function() {
     },
     submitHandler: submitLoginForm
   });
-});
 
-
-
-/*
-$(document).ready(function() {
-  var increase = 2;
-  var postCount = 2;
-
-  $(".posts").load("ajax/posts.php", {
-    postCount: postCount
-  });
-
+  var postCount = 3;
+  console.log(postCount);
 
   $(".posts__button").click(function() {
-    postCount += increase;
+    postCount += 2;
     $(".posts").load("ajax/posts.php", {
       postCount: postCount
     });
-
+    console.log(postCount);
   });
 });
-*/

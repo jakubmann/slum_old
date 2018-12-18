@@ -70,12 +70,11 @@ class App {
     }
 
     public function route() {
-      $url = 'view/';
-      $url .= str_replace('/slum/', '', $_SERVER['PHP_SELF']);
+      $url = 'view' . $_SERVER['PHP_SELF'];
       $name = str_replace(
         '.php',
         '',
-        (str_replace('/slum/', '', $_SERVER['PHP_SELF']))
+        (str_replace('/', '', $_SERVER['PHP_SELF']))
       );
       include_once($url);
       $renderable = new $name(self::getInstance());

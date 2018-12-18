@@ -67,4 +67,14 @@
   &--last {
     border-bottom: none;
   }
+  &__button {
+    display: block;
+    margin: 0px auto;
+  	border: none;
+  	padding: 8px 15px 8px 15px;
+  	margin-top: 15px;
+  	background-color: #dddddd;
+  	font-family: $plex-mono;
+  	border-radius: 5px;
+  }
 }

@@ -7,7 +7,6 @@ spl_autoload_register('Autoloader::ClassLoader');
 $app = App::getInstance();
 $db = $app->getConn();
 
-
 if ($_POST) {
   $title = $_POST['title'];
   $body = $_POST['body'];
@@ -15,7 +14,6 @@ if ($_POST) {
 
 
   if(isset($_POST['body']) && isset($_POST['title'])) {
-    if (isset($_SESSION['user_id'])) {
       $stmt = $db->prepare('SELECT * FROM text WHERE body = :body');
       $stmt->execute(array(':body' => $body));
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -51,12 +49,8 @@ if ($_POST) {
       else {
         echo '1'; //plagiature
       }
-    }
-    else {
-      echo '2'; //not logged in
-    }
   }
   else {
-    echo '3'; //empty text field
+    echo '2'; //empty text field
   }
 }

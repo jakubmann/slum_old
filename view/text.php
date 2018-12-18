@@ -9,7 +9,12 @@ class text extends View {
 
 
   public function render() {
-    $tpl = file_get_contents('template/text.php');
+    if (isset($_SESSION['user_id'])) {
+      $tpl = file_get_contents('template/text.php');
+    }
+    else {
+      $tpl = file_get_contents('template/notregistered.php');
+    }
     $header = $this->renderHeader();
     echo str_replace('{/HEADER}', $header, str_replace('{/TPL}', $tpl, file_get_contents('template/template.php')));
   }

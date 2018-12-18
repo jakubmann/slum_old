@@ -23,7 +23,7 @@ if ($_POST) {
     if ($count == 0) {
       $stmt = $db->prepare('SELECT * FROM users WHERE username = :username');
       $stmt->execute(array(':username' => $username));
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $count = $stmt->rowCount();
 
       if ($count == 0) {
 

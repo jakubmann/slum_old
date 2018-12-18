@@ -22,7 +22,7 @@ gulp.task('watch', ['browser-Sync'], function() {
 gulp.task('browser-Sync', function() {
     browserSync.init({
         injectChanges: true,
-        proxy: 'localhost/slum/index.php',
+        proxy: 'slum.dev/index.php',
         port: 81,
         open: false
     });
